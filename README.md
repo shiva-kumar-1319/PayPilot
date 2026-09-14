@@ -1,6 +1,6 @@
 <div align="center">
 
-# RecoverX
+# PayPilot
 
 ### AI-Powered Payment Recovery Agent
 
