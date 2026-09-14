@@ -4,7 +4,6 @@
 
 ### AI-Powered Payment Recovery Agent
 
-**Razorpay AI Buildathon 2026 — Track 03: AI Revenue Recovery**
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square&logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=flat-square&logo=fastapi)
