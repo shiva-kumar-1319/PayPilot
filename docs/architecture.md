@@ -1,6 +1,6 @@
-# RecoverX Architecture Specification (`ARCHITECTURE.md`)
+# PayPilot Architecture Specification (`ARCHITECTURE.md`)
 
-RecoverX is structured as a resilient, modular, and audit-compliant payment recovery system.
+PayPilot is structured as a resilient, modular, and audit-compliant payment recovery system.
 
 ```
                                     RECOVERX ARCHITECTURE

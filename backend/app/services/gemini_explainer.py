@@ -1,4 +1,4 @@
-"""Gemini Explanation Layer for RecoverX.
+"""Gemini Explanation Layer for PayPilot.
 
 Generates human-readable, multi-stakeholder narratives (merchant summary,
 customer notification, merchant diagnostic notes) for recovery decisions.
@@ -100,7 +100,7 @@ def generate_recovery_explanation(
 
     # 2. Construct narrative synthesis prompt (downstream of all decisions)
     system_prompt = (
-        "You are an AI financial narrator for the RecoverX payment recovery platform. "
+        "You are an AI financial narrator for the PayPilot payment recovery platform. "
         "The recovery decision has already been calculated deterministically by a calibrated ML model "
         "and Net Expected Value optimizer. Your sole task is narrative synthesis — translating structured "
         "decision context into clear, concise, professional text for stakeholders.\n\n"

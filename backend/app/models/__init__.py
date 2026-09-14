@@ -1,4 +1,4 @@
-"""Persistence models owned by the RecoverX domain."""
+"""Persistence models owned by the PayPilot domain."""
 
 from backend.app.models.base import Base
 from backend.app.models.recovery import (

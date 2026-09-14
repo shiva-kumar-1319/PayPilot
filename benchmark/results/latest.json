@@ -59,8 +59,8 @@
       "net_revenue_per_recovery_attempt": 3926.37,
       "cost_efficiency_ratio": 6654.86
     },
-    "RecoverX (Cost-Aware EV Agent)": {
-      "strategy_name": "RecoverX (Cost-Aware EV Agent)",
+    "PayPilot (Cost-Aware EV Agent)": {
+      "strategy_name": "PayPilot (Cost-Aware EV Agent)",
       "total_transactions": 1000,
       "recovered_count": 583,
       "recovery_rate_pct": 58.3,

@@ -1,4 +1,4 @@
-// RecoverX - Day 12 Real-Time Recovery Dashboard Client Logic
+// PayPilot - Day 12 Real-Time Recovery Dashboard Client Logic
 
 let currentMerchantId = "merch_101";
 let refreshInterval = null;
@@ -684,7 +684,7 @@ function renderBenchmarkResults(data) {
       { key: 'NO_ACTION', label: 'No Action (0-Retries)', data: noAction, color: '#94a3b8' },
       { key: 'BLIND_RETRY', label: 'Blind Retry (Naive)', data: blindRetry, color: '#f43f5e' },
       { key: 'RULE_BASED_HEURISTIC', label: 'Rule-Based Heuristic', data: heuristic, color: '#eab308' },
-      { key: 'RECOVERX_AI', label: 'RecoverX AI Platform (Winner)', data: recoverx, color: '#10b981' },
+      { key: 'RECOVERX_AI', label: 'PayPilot AI Platform (Winner)', data: recoverx, color: '#10b981' },
     ];
 
     tbody.innerHTML = stratList.map(s => {

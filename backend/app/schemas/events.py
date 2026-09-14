@@ -1,4 +1,4 @@
-"""Validated HTTP/event contracts and domain event envelopes for RecoverX."""
+"""Validated HTTP/event contracts and domain event envelopes for PayPilot."""
 
 from datetime import datetime, timezone
 from decimal import Decimal
@@ -30,7 +30,7 @@ class PaymentFailedEvent(BaseModel):
 
 
 class DomainEventEnvelope(BaseModel):
-    """Standardized event envelope adhering to RecoverX event-flow specification."""
+    """Standardized event envelope adhering to PayPilot event-flow specification."""
 
     event_id: UUID = Field(default_factory=uuid4)
     event_type: str = Field(min_length=1, max_length=96)

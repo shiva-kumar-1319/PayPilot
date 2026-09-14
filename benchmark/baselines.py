@@ -1,4 +1,4 @@
-"""Evaluated baseline strategies and RecoverX Agent for the benchmark framework."""
+"""Evaluated baseline strategies and PayPilot Agent for the benchmark framework."""
 
 from __future__ import annotations
 
@@ -58,10 +58,10 @@ class RuleHeuristicBaseline(BaseRecoveryStrategy):
         return "RETRY_SAME_METHOD"
 
 
-class RecoverXAgent(BaseRecoveryStrategy):
-    """RecoverX: Cost-Aware Expected-Value Maximization with Policy Gates & Calibrated ML."""
+class PayPilotAgent(BaseRecoveryStrategy):
+    """PayPilot: Cost-Aware Expected-Value Maximization with Policy Gates & Calibrated ML."""
 
-    name = "RecoverX (Cost-Aware EV Agent)"
+    name = "PayPilot (Cost-Aware EV Agent)"
 
     def select_action(self, observable: ObservableFailureEvent) -> str:
         # 1. Deterministic Policy Gate check

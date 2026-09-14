@@ -2,9 +2,9 @@
 
 ## Overview
 
-Day 6 delivers the **Transaction & Customer Intelligence** layer for RecoverX, equipping the AI revenue recovery engine with historical customer profiling, multi-method payment behavior analytics, customer recovery conversion tracking, and point-in-time normalized ML feature snapshots.
+Day 6 delivers the **Transaction & Customer Intelligence** layer for PayPilot, equipping the AI revenue recovery engine with historical customer profiling, multi-method payment behavior analytics, customer recovery conversion tracking, and point-in-time normalized ML feature snapshots.
 
-Rather than treating every transaction failure in isolation, RecoverX now contextualizes decisions with customer payment history: identifying preferred instruments (e.g. UPI affinity vs card loyalty), detecting decline-prone patterns, calculating retry tolerance, and dynamically boosting recovery success probabilities and reason codes.
+Rather than treating every transaction failure in isolation, PayPilot now contextualizes decisions with customer payment history: identifying preferred instruments (e.g. UPI affinity vs card loyalty), detecting decline-prone patterns, calculating retry tolerance, and dynamically boosting recovery success probabilities and reason codes.
 
 ```mermaid
 flowchart TD

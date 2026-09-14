@@ -15,9 +15,9 @@
 
 ---
 
-## What is RecoverX?
+## What is PayPilot?
 
-RecoverX is a **Bounded AI-Assisted Payment Recovery Agent** that detects failed payments, predicts per-action recovery probabilities using calibrated machine learning, selects the optimal intervention via Net Expected Value optimization, enforces deterministic safety policy guardrails, executes bounded recovery workflows, and measures actual revenue recovered.
+PayPilot is a **Bounded AI-Assisted Payment Recovery Agent** that detects failed payments, predicts per-action recovery probabilities using calibrated machine learning, selects the optimal intervention via Net Expected Value optimization, enforces deterministic safety policy guardrails, executes bounded recovery workflows, and measures actual revenue recovered.
 
 > **Zero Generative LLM in Core Financial Path**: Recovery decisions are driven by calibrated ML (`GradientBoosting` + isotonic regression) and Net Expected Value math, bound by strict deterministic policy gates. This prevents hallucinations, unbounded loops, or compliance violations on live financial transactions.
 
@@ -32,9 +32,9 @@ Benchmark evaluated on 1,000 transactions with a fixed seed — 100% reproducibl
 | No Action | 0.0% | ₹0 | 0 |
 | Blind Immediate Retry | 12.2% | ₹5,93,785 | **50** |
 | Rule-Based Heuristic | 59.0% | ₹37,30,049 | 0 |
-| **RecoverX (Cost-Aware EV Agent)** | **58.3%** | **₹37,77,203** | **0** |
+| **PayPilot (Cost-Aware EV Agent)** | **58.3%** | **₹37,77,203** | **0** |
 
-> **Why 58.3% beats 59.0%**: RecoverX intentionally trades a small amount of raw recovery volume (-0.7pp) for lower execution cost and zero policy violations, netting **+₹47,153 more actual revenue** and +2.5% higher cost efficiency.
+> **Why 58.3% beats 59.0%**: PayPilot intentionally trades a small amount of raw recovery volume (-0.7pp) for lower execution cost and zero policy violations, netting **+₹47,153 more actual revenue** and +2.5% higher cost efficiency.
 
 - **+₹31,83,418** net revenue vs blind retry (+536%)
 - **+₹47,153** net revenue vs rule heuristic (cost-awareness advantage)
@@ -62,7 +62,7 @@ python -m benchmark.run_benchmark --seed 42 --transactions 1000 --explain
 
 ### Full System Pipeline
 
-> Every box is a real module. Every arrow is a real data contract. The **Policy Gate** and **EV Optimizer** are what separate RecoverX from a simple retry engine.
+> Every box is a real module. Every arrow is a real data contract. The **Policy Gate** and **EV Optimizer** are what separate PayPilot from a simple retry engine.
 
 ```mermaid
 flowchart TD
@@ -132,7 +132,7 @@ flowchart TD
 
 ---
 
-### Why RecoverX Beats a Retry Engine
+### Why PayPilot Beats a Retry Engine
 
 ```mermaid
 flowchart LR
@@ -143,7 +143,7 @@ flowchart LR
         O2 --> O5["Net Revenue: ₹5.9 L"]
     end
 
-    subgraph RX["✅ RecoverX (AI-Assisted)"]
+    subgraph RX["✅ PayPilot (AI-Assisted)"]
         R1["Payment Fails"] --> R2["Classify Failure"]
         R2 --> R3{"Hard Failure?"}
         R3 -->|Yes| R4["STOP — zero cost, zero risk"]
@@ -228,7 +228,7 @@ Merchant / Customer Narrative
 
 ### Decision Engine — Net Expected Value
 
-RecoverX does not pick the highest-probability action. It picks the highest **Net Expected Value** action:
+PayPilot does not pick the highest-probability action. It picks the highest **Net Expected Value** action:
 
 ```
 Net EV(action) = P(success) × amount × time_decay − execution_cost − friction_penalty
@@ -261,7 +261,7 @@ The benchmark framework enforces strict mathematical fairness and causal integri
 
 1. **Separation of Hidden Ground Truth & Observable Facts**: The agent and baseline strategies only receive `ObservableFailureEvent` (failure code, category, amount, customer history). They have zero access to `HiddenGroundTruth` (customer willingness, liquid balance, terminal fraud flags).
 2. **Strategy-Fair Deterministic Outcomes**: For any `(seed, scenario_id, action)`, stochastic outcomes are deterministically derived using SHA-256 seed hashing.
-3. **Execution-Order Invariance**: Strategy execution order cannot affect benchmark results. Running RecoverX before or after Blind Retry yields bit-for-bit identical results.
+3. **Execution-Order Invariance**: Strategy execution order cannot affect benchmark results. Running PayPilot before or after Blind Retry yields bit-for-bit identical results.
 4. **Reproducibility**: No non-deterministic `uuid4()` calls or unseeded RNGs exist in the benchmark pipeline. Running `--seed 42` produces identical numbers every time.
 
 ---
@@ -286,7 +286,7 @@ The benchmark framework enforces strict mathematical fairness and causal integri
 ├── benchmark/
 │   ├── scenarios.py          # Causal separation: HiddenGroundTruth vs ObservableFailureEvent
 │   ├── simulator.py          # Payment environment (physics-based outcome resolution)
-│   ├── baselines.py          # No Action, Blind Retry, Rule Heuristic, RecoverX
+│   ├── baselines.py          # No Action, Blind Retry, Rule Heuristic, PayPilot
 │   ├── metrics.py            # StrategyMetrics: recovery rate, GMV, cost, violations
 │   └── run_benchmark.py      # 4-way comparative benchmark CLI
 ├── tests/

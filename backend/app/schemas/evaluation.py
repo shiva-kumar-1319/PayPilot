@@ -1,6 +1,6 @@
 """Pydantic schemas for Day 13 Evaluation + Business Proof.
 
-Covers Baseline vs RecoverX benchmarks, financial ROI calculations,
+Covers Baseline vs PayPilot benchmarks, financial ROI calculations,
 stopping rules verification, and immutable audit trail reconstruction.
 """
 

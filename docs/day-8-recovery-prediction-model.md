@@ -2,7 +2,7 @@
 
 ## Overview
 
-Day 8 delivers the **Recovery Prediction Model** for RecoverX — a Gradient-Boosted classifier that estimates `P(success | action)` for every candidate recovery action. Rather than relying on static heuristic probabilities hardcoded in the Recovery Orchestrator, the model learns data-driven success likelihoods from domain-knowledge-derived synthetic training data and outputs **calibrated probability estimates** for downstream expected-value optimisation.
+Day 8 delivers the **Recovery Prediction Model** for PayPilot — a Gradient-Boosted classifier that estimates `P(success | action)` for every candidate recovery action. Rather than relying on static heuristic probabilities hardcoded in the Recovery Orchestrator, the model learns data-driven success likelihoods from domain-knowledge-derived synthetic training data and outputs **calibrated probability estimates** for downstream expected-value optimisation.
 
 ```mermaid
 flowchart TD

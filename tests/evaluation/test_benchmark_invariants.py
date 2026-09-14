@@ -6,7 +6,7 @@ import pytest
 from benchmark.baselines import (
     BlindImmediateRetry,
     NoActionBaseline,
-    RecoverXAgent,
+    PayPilotAgent,
     RuleHeuristicBaseline,
 )
 from benchmark.run_benchmark import run_benchmark
@@ -39,17 +39,17 @@ def test_benchmark_strategy_order_invariance():
         NoActionBaseline(),
         BlindImmediateRetry(),
         RuleHeuristicBaseline(),
-        RecoverXAgent(),
+        PayPilotAgent(),
     ]
     order_2 = [
-        RecoverXAgent(),
+        PayPilotAgent(),
         RuleHeuristicBaseline(),
         BlindImmediateRetry(),
         NoActionBaseline(),
     ]
     order_3 = [
         RuleHeuristicBaseline(),
-        RecoverXAgent(),
+        PayPilotAgent(),
         NoActionBaseline(),
         BlindImmediateRetry(),
     ]
@@ -58,7 +58,7 @@ def test_benchmark_strategy_order_invariance():
     rep2 = run_benchmark(seed=42, num_transactions=200, verbose=False, strategies=order_2)
     rep3 = run_benchmark(seed=42, num_transactions=200, verbose=False, strategies=order_3)
 
-    for strat_name in [NoActionBaseline.name, BlindImmediateRetry.name, RuleHeuristicBaseline.name, RecoverXAgent.name]:
+    for strat_name in [NoActionBaseline.name, BlindImmediateRetry.name, RuleHeuristicBaseline.name, PayPilotAgent.name]:
         m1 = rep1.strategies[strat_name]
         m2 = rep2.strategies[strat_name]
         m3 = rep3.strategies[strat_name]
@@ -75,8 +75,8 @@ def test_benchmark_seed_determinism():
     rep1 = run_benchmark(seed=1234, num_transactions=150, verbose=False)
     rep2 = run_benchmark(seed=1234, num_transactions=150, verbose=False)
 
-    rx1 = rep1.strategies[RecoverXAgent.name]
-    rx2 = rep2.strategies[RecoverXAgent.name]
+    rx1 = rep1.strategies[PayPilotAgent.name]
+    rx2 = rep2.strategies[PayPilotAgent.name]
 
     assert rx1.recovered_count == rx2.recovered_count
     assert rx1.recovered_volume_inr == rx2.recovered_volume_inr
@@ -101,8 +101,8 @@ def test_benchmark_seed_sensitivity_different_results():
     rep_seed42 = run_benchmark(seed=42, num_transactions=300, verbose=False)
     rep_seed43 = run_benchmark(seed=43, num_transactions=300, verbose=False)
 
-    rx42 = rep_seed42.strategies[RecoverXAgent.name]
-    rx43 = rep_seed43.strategies[RecoverXAgent.name]
+    rx42 = rep_seed42.strategies[PayPilotAgent.name]
+    rx43 = rep_seed43.strategies[PayPilotAgent.name]
 
     # Different seeds produce different random scenarios and financial volumes
     assert rep_seed42.seed != rep_seed43.seed
@@ -110,9 +110,9 @@ def test_benchmark_seed_sensitivity_different_results():
 
 
 def test_recoverx_zero_hard_stop_violations_guarantee():
-    """Invariant: RecoverX must achieve strictly ZERO hard-stop policy violations across any scenario mix."""
+    """Invariant: PayPilot must achieve strictly ZERO hard-stop policy violations across any scenario mix."""
     report = run_benchmark(seed=777, num_transactions=300, verbose=False)
-    rx = report.strategies[RecoverXAgent.name]
+    rx = report.strategies[PayPilotAgent.name]
     blind = report.strategies[BlindImmediateRetry.name]
 
     assert rx.hard_stop_violations == 0
@@ -120,9 +120,9 @@ def test_recoverx_zero_hard_stop_violations_guarantee():
 
 
 def test_recoverx_net_revenue_lift_over_blind_retry():
-    """Invariant: RecoverX Net Expected Value optimization must yield substantial net revenue lift over Blind Retry."""
+    """Invariant: PayPilot Net Expected Value optimization must yield substantial net revenue lift over Blind Retry."""
     report = run_benchmark(seed=42, num_transactions=500, verbose=False)
-    rx = report.strategies[RecoverXAgent.name]
+    rx = report.strategies[PayPilotAgent.name]
     blind = report.strategies[BlindImmediateRetry.name]
 
     assert rx.net_revenue_recovered_inr > blind.net_revenue_recovered_inr
@@ -131,12 +131,12 @@ def test_recoverx_net_revenue_lift_over_blind_retry():
 
 
 def test_recoverx_net_revenue_and_cost_efficiency_superiority_over_rule_heuristic():
-    """Invariant: RecoverX achieves higher net revenue and cost efficiency than Rule Heuristic even with lower raw recovery rate."""
+    """Invariant: PayPilot achieves higher net revenue and cost efficiency than Rule Heuristic even with lower raw recovery rate."""
     report = run_benchmark(seed=42, num_transactions=1000, verbose=False)
-    rx = report.strategies[RecoverXAgent.name]
+    rx = report.strategies[PayPilotAgent.name]
     heur = report.strategies[RuleHeuristicBaseline.name]
 
-    # Verify intentional trade-off: RecoverX optimizes Net EV, not raw recovery volume
+    # Verify intentional trade-off: PayPilot optimizes Net EV, not raw recovery volume
     assert rx.recovery_rate_pct <= heur.recovery_rate_pct
     assert rx.net_revenue_recovered_inr > heur.net_revenue_recovered_inr
     assert rx.cost_efficiency_ratio > heur.cost_efficiency_ratio

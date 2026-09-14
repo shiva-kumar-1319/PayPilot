@@ -1,4 +1,4 @@
-"""Dashboard REST API endpoints for RecoverX Real-Time Analytics & Projections."""
+"""Dashboard REST API endpoints for PayPilot Real-Time Analytics & Projections."""
 
 from datetime import datetime
 from uuid import UUID

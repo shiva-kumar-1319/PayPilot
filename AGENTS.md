@@ -1,12 +1,12 @@
-# RecoverX Agent System Specification (`AGENTS.md`)
+# PayPilot Agent System Specification (`AGENTS.md`)
 
-> **Target Audience**: AI Agents, Code Evaluators, and Technical Reviewers inspecting autonomous decision-making in RecoverX.
+> **Target Audience**: AI Agents, Code Evaluators, and Technical Reviewers inspecting autonomous decision-making in PayPilot.
 
 ---
 
 ## 1. Agent Architecture & Paradigm
 
-RecoverX operates a **Bounded AI-Assisted Payment Recovery Agent** (`PaymentRecoveryAgent`) designed specifically for payment failure remediation. Unlike unbounded open-ended conversational agents or generative LLMs, RecoverX enforces strict determinism, bounded execution steps, and non-bypassable policy guardrails.
+PayPilot operates a **Bounded AI-Assisted Payment Recovery Agent** (`PaymentRecoveryAgent`) designed specifically for payment failure remediation. Unlike unbounded open-ended conversational agents or generative LLMs, PayPilot enforces strict determinism, bounded execution steps, and non-bypassable policy guardrails.
 
 * **ML Model**: Provides calibrated recovery-success probability prediction (`GradientBoostingClassifier` + `CalibratedClassifierCV` isotonic).
 * **Decision Engine**: Maximizes Net Expected Value ($EV$).

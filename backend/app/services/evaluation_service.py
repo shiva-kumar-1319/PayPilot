@@ -1,6 +1,6 @@
-"""Evaluation & Business Proof Service — Baseline vs RecoverX, Batch Simulation, Stopping Rules, and Audit Trail.
+"""Evaluation & Business Proof Service — Baseline vs PayPilot, Batch Simulation, Stopping Rules, and Audit Trail.
 
-Day 13 deliverable: provides empirical proof of RecoverX revenue recovery performance
+Day 13 deliverable: provides empirical proof of PayPilot revenue recovery performance
 compared against industry baselines (No Action, Blind Retry, Rule-Based Heuristics),
 measures net financial ROI, audits safety stopping rules, and reconstructs immutable
 cryptographic audit timelines.
@@ -88,7 +88,7 @@ class EvaluationService:
         from benchmark.baselines import (
             BlindImmediateRetry,
             NoActionBaseline,
-            RecoverXAgent,
+            PayPilotAgent,
             RuleHeuristicBaseline,
         )
         from benchmark.scenarios import generate_scenarios
@@ -100,7 +100,7 @@ class EvaluationService:
         strat_no_action = NoActionBaseline()
         strat_blind = BlindImmediateRetry()
         strat_heur = RuleHeuristicBaseline()
-        strat_rx = RecoverXAgent()
+        strat_rx = PayPilotAgent()
 
 
         total_failed_gmv = Decimal(str(round(sum(s.observable.amount for s in scenarios_list), 2)))
@@ -146,7 +146,7 @@ class EvaluationService:
         no_action_metrics = _build_metrics("No Action (Baseline 0)", BenchmarkStrategy.NO_ACTION, "Naive baseline with zero automated recovery workflows.", res_no_action, 0.0)
         blind_metrics = _build_metrics("Blind Same-Method Retry", BenchmarkStrategy.BLIND_RETRY, "Naive same-method retries without policy gates; causes repeat declines.", res_blind, 180.0)
         heuristic_metrics = _build_metrics("Rule-Based Heuristic", BenchmarkStrategy.RULE_BASED_HEURISTIC, "Deterministic static rules without ML calibration or Net EV.", res_heur, 95.0)
-        recoverx_metrics = _build_metrics("RecoverX AI Revenue Engine", BenchmarkStrategy.RECOVERX_AI, "Full AI system: Failure intelligence + ML calibrated probability + Cost-aware Net EV.", res_rx, 42.5)
+        recoverx_metrics = _build_metrics("PayPilot AI Revenue Engine", BenchmarkStrategy.RECOVERX_AI, "Full AI system: Failure intelligence + ML calibrated probability + Cost-aware Net EV.", res_rx, 42.5)
 
         # 3. Category Breakdown tracking actual simulation counts
         cat_map: dict[str, dict[str, int]] = {}
@@ -263,7 +263,7 @@ class EvaluationService:
             double_billing_prevention_rate_pct=100.0,
             stopping_rules_compliance_pct=100.0,
             key_findings=[
-                f"RecoverX captured ₹{recovered_gmv:,.2f} in recovered GMV ({recovery_rate}% net recovery efficiency).",
+                f"PayPilot captured ₹{recovered_gmv:,.2f} in recovered GMV ({recovery_rate}% net recovery efficiency).",
                 f"Delivered {roi_mult}x Net Financial ROI with cost-to-recover ratio of only {cost_ratio}%.",
                 "100% adherence to all 6 safety stopping rules with zero double-billing violations.",
                 "Blocked 100% of hard failures (fraud, stolen cards) avoiding harmful retries and chargeback fees.",

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Day 9 delivers the **Recovery Decision Engine** for RecoverX — an expected-value maximisation system that replaces hardcoded probability heuristics with a fully ML-driven, cost-aware action selection pipeline. The engine combines the **calibrated success probabilities** from the Day 8 prediction model with a detailed **cost model** (execution cost, customer friction, and time-to-recovery decay) to compute the **net Expected Value (EV)** of each candidate action and select the one that maximises recovered GMV.
+Day 9 delivers the **Recovery Decision Engine** for PayPilot — an expected-value maximisation system that replaces hardcoded probability heuristics with a fully ML-driven, cost-aware action selection pipeline. The engine combines the **calibrated success probabilities** from the Day 8 prediction model with a detailed **cost model** (execution cost, customer friction, and time-to-recovery decay) to compute the **net Expected Value (EV)** of each candidate action and select the one that maximises recovered GMV.
 
 ```mermaid
 flowchart TD

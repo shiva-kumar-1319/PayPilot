@@ -9,9 +9,9 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    """Runtime settings for the RecoverX application."""
+    """Runtime settings for the PayPilot application."""
 
-    app_name: str = "RecoverX"
+    app_name: str = "PayPilot"
     app_env: str = "development"
     app_host: str = "0.0.0.0"
     app_port: int = 8000

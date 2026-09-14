@@ -1,4 +1,4 @@
-"""Database engine and session helpers for the RecoverX transactional store."""
+"""Database engine and session helpers for the PayPilot transactional store."""
 
 import contextvars
 from collections.abc import Generator

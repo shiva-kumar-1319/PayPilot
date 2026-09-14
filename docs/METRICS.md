@@ -1,4 +1,4 @@
-# RecoverX Evaluation & Machine Learning Metrics (`METRICS.md`)
+# PayPilot Evaluation & Machine Learning Metrics (`METRICS.md`)
 
 > **Transparent Machine Learning & Statistical Benchmark Disclosure**
 
@@ -6,11 +6,11 @@
 
 ## 1. Machine Learning Model Architecture & Calibration
 
-RecoverX utilizes a supervised classification pipeline to estimate recovery probabilities $P(\text{Success} \mid \mathbf{x}, a)$:
+PayPilot utilizes a supervised classification pipeline to estimate recovery probabilities $P(\text{Success} \mid \mathbf{x}, a)$:
 
 - **Base Estimator**: `GradientBoostingClassifier` (100 estimators, max depth 4, learning rate 0.1).
 - **Probability Calibrator**: `CalibratedClassifierCV` utilizing **Isotonic Regression** with 3-fold cross-validation.
-- **Why Calibration Matters in Payments**: Uncalibrated models tend to produce overconfident predictions near 0 and 1. Because RecoverX uses probabilities directly in the Net Expected Value formula, well-calibrated probabilities are mandatory to avoid over-spending on retries.
+- **Why Calibration Matters in Payments**: Uncalibrated models tend to produce overconfident predictions near 0 and 1. Because PayPilot uses probabilities directly in the Net Expected Value formula, well-calibrated probabilities are mandatory to avoid over-spending on retries.
 
 ### Verified Calibration Performance (Holdout Test Set)
 

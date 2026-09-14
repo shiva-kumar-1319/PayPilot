@@ -1,4 +1,4 @@
-# 🏛 RecoverX — Deep Technical Architecture Specification
+# 🏛 PayPilot — Deep Technical Architecture Specification
 
 > **Target Audience**: FinTech Technical Interviewers, Principal Payment Architects, and System Designers.  
 > **System Classification**: High-Throughput Autonomous Financial Recovery Infrastructure.
@@ -7,7 +7,7 @@
 
 ## 1. Executive Architectural Blueprint
 
-RecoverX is architected as an event-driven, bounded autonomous decision engine operating alongside modern payment gateways (Razorpay, Stripe, Cashfree, UPI NPCI Switch). It processes payment failure webhooks in $<50\text{ ms}$, computes optimal recovery vectors, and coordinates multi-channel execution while guaranteeing zero double-billing and 100% compliance with card network stopping rules.
+PayPilot is architected as an event-driven, bounded autonomous decision engine operating alongside modern payment gateways (Razorpay, Stripe, Cashfree, UPI NPCI Switch). It processes payment failure webhooks in $<50\text{ ms}$, computes optimal recovery vectors, and coordinates multi-channel execution while guaranteeing zero double-billing and 100% compliance with card network stopping rules.
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -118,7 +118,7 @@ stateDiagram-v2
 ### The Double-Billing Threat Model
 In high-volume payment processing, gateway timeouts frequently cause asynchronous callbacks to arrive simultaneously with customer retry attempts. If two execution workers attempt to retry the same failed payment concurrently, the customer may be billed twice.
 
-### How RecoverX Eliminates Double-Billing:
+### How PayPilot Eliminates Double-Billing:
 1. **Pre-Execution Guard Check**: The execution worker checks `Transaction.status`. If status is already `SUCCEEDED`, the attempt is rejected with `disposition="REFUSED"`.
 2. **Atomic Version Check**:
    ```sql

@@ -1,1 +1,1 @@
-"""RecoverX tests."""
+"""PayPilot tests."""

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RecoverX — AI Revenue Recovery Agent | Razorpay AI Buildathon 2026</title>
-  <meta name="description" content="RecoverX: Autonomous AI agent that recovers failed payment revenue using Bounded ReAct tool-calling, calibrated ML, Net Expected Value optimization, and cryptographic audit chains.">
+  <title>PayPilot — AI Revenue Recovery Agent | Razorpay AI Buildathon 2026</title>
+  <meta name="description" content="PayPilot: Autonomous AI agent that recovers failed payment revenue using Bounded ReAct tool-calling, calibrated ML, Net Expected Value optimization, and cryptographic audit chains.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
@@ -1094,7 +1094,7 @@
     <!-- TOP BAR -->
     <header class="topbar">
       <div class="topbar-brand">
-        <span class="brand-name">RecoverX</span>
+        <span class="brand-name">PayPilot</span>
         <span class="hackathon-badge">🏆 Razorpay AI Buildathon 2026 — Track 03</span>
       </div>
       <div class="topbar-right">
@@ -1124,7 +1124,7 @@
           <div class="hero-title-block">
             <h1>AI-Powered <span class="gradient-text">Payment Recovery</span> Engine</h1>
             <p class="hero-subtitle">
-              RecoverX autonomously investigates failed payments using a <strong>Bounded ReAct Agent</strong> with 6 deterministic tool steps,
+              PayPilot autonomously investigates failed payments using a <strong>Bounded ReAct Agent</strong> with 6 deterministic tool steps,
               a <strong>Calibrated Gradient Boosted ML model</strong> (CalibratedClassifierCV + Isotonic), and <strong>Net Expected Value (EV)</strong> optimization
               across all recovery rail options — then executes recovery with idempotent guards and SHA-256 cryptographic audit chains.
             </p>
@@ -1404,7 +1404,7 @@
           <!-- RECOVERX AI -->
           <div class="benchmark-strategy-row recoverx-row">
             <div>
-              <div class="strategy-name">⚡ RecoverX AI Agent</div>
+              <div class="strategy-name">⚡ PayPilot AI Agent</div>
               <div class="strategy-desc">Failure Intel + Calibrated ML + Net EV + Stopping Rules</div>
             </div>
             <div class="bar-container">
@@ -1421,11 +1421,11 @@
           <div style="padding:16px;background:rgba(16,185,129,0.05);border-top:1px solid rgba(16,185,129,0.15);border-radius:0 0 var(--radius-md) var(--radius-md);">
             <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
               <div>
-                <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.6px;">RecoverX vs Blind Retry</div>
+                <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.6px;">PayPilot vs Blind Retry</div>
                 <div class="font-mono" id="lift-vs-blind" style="font-size:20px;font-weight:800;color:var(--accent-emerald);">+₹31.9L</div>
               </div>
               <div>
-                <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.6px;">RecoverX vs No Action</div>
+                <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.6px;">PayPilot vs No Action</div>
                 <div class="font-mono" id="lift-vs-no-action" style="font-size:20px;font-weight:800;color:var(--accent-emerald);">+₹37.7L</div>
               </div>
               <div>
@@ -1737,7 +1737,7 @@
       <div class="test-panel">
         <div class="test-panel-title">🎮 Interactive Live Demo — All 5 Production Scenarios</div>
         <div class="test-panel-subtitle">
-          Select a scenario to trigger a real agent investigation with live tool execution traces. Every test is backed by actual API calls to the running RecoverX backend.
+          Select a scenario to trigger a real agent investigation with live tool execution traces. Every test is backed by actual API calls to the running PayPilot backend.
         </div>
 
         <div class="test-scenarios">
@@ -1782,7 +1782,7 @@
         </div>
 
         <div class="test-output" id="demo-output">
-          <div class="log-line info"><span class="ts">[00:00:00]</span><span class="msg"> ✓ RecoverX backend connected. Select a scenario and press Run Test.</span></div>
+          <div class="log-line info"><span class="ts">[00:00:00]</span><span class="msg"> ✓ PayPilot backend connected. Select a scenario and press Run Test.</span></div>
         </div>
       </div>
 
@@ -2181,7 +2181,7 @@ async function runBenchmark() {
     document.getElementById('heuristic-gmv').textContent = fmt(heur.recovered_gmv);
     document.getElementById('heuristic-violations').textContent = (heur.hard_stop_violations || 0);
 
-    // RecoverX
+    // PayPilot
     const rxPct = parseFloat(rx.gross_recovery_rate_pct || 0);
     setBenchmarkBar('recoverx', (rxPct / maxRate) * 100, rxPct.toFixed(1) + '%');
     document.getElementById('rx-pct').textContent = rxPct.toFixed(1) + '%';

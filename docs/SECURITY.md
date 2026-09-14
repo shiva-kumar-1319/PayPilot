@@ -1,6 +1,6 @@
-# RecoverX Security, Architecture & Compliance Disclosure
+# PayPilot Security, Architecture & Compliance Disclosure
 
-This document provides a transparent, factual disclosure of the security architecture, compliance boundaries, and data protection practices of RecoverX.
+This document provides a transparent, factual disclosure of the security architecture, compliance boundaries, and data protection practices of PayPilot.
 
 ---
 
@@ -8,16 +8,16 @@ This document provides a transparent, factual disclosure of the security archite
 
 > [!IMPORTANT]
 > **Prototype / Simulation Disclosure**:
-> RecoverX is built for the **Razorpay AI Buildathon 2026** as an autonomous recovery agent prototype.
-> - RecoverX is **designed to align with** the principles of PCI-DSS v4.0 and RBI Payment Aggregator Guidelines.
-> - RecoverX is **NOT** a certified PCI-DSS Level 1 Service Provider and does **NOT** hold formal regulatory certification.
-> - In production payment systems, PAN/CVV handling is delegated exclusively to certified card vaults and payment aggregators (e.g., Razorpay / Stripe). RecoverX strictly operates on tokenized references, masked BINs, and payment gateway tokens.
+> PayPilot is built for the **Razorpay AI Buildathon 2026** as an autonomous recovery agent prototype.
+> - PayPilot is **designed to align with** the principles of PCI-DSS v4.0 and RBI Payment Aggregator Guidelines.
+> - PayPilot is **NOT** a certified PCI-DSS Level 1 Service Provider and does **NOT** hold formal regulatory certification.
+> - In production payment systems, PAN/CVV handling is delegated exclusively to certified card vaults and payment aggregators (e.g., Razorpay / Stripe). PayPilot strictly operates on tokenized references, masked BINs, and payment gateway tokens.
 
 ---
 
 ## 2. PII Protection & Data Minimization
 
-RecoverX enforces strict PII minimization across all agent tools, logging systems, and database models:
+PayPilot enforces strict PII minimization across all agent tools, logging systems, and database models:
 
 | Data Type | Handling Policy | Implementation |
 | :--- | :--- | :--- |
@@ -48,7 +48,7 @@ Every automated state transition and recovery decision is recorded with a crypto
 
 ## 5. Secrets Handling & Key Management
 
-RecoverX strictly adheres to modern 12-factor configuration principles for all sensitive credentials:
+PayPilot strictly adheres to modern 12-factor configuration principles for all sensitive credentials:
 - **Environment-Based Injection**: Zero API keys, gateway tokens, or model credentials are hardcoded in source code or tracked in version control. All configuration is loaded dynamically via `pydantic-settings` from environment variables or local `.env`.
 - **Fail-Fast Validation**: The application startup sequence (`backend/app/main.py`) validates the presence and structure of required credentials for active features (`USE_LIVE_GATEWAY`, `USE_LLM_EXPLANATIONS`, and production merchant auth), immediately halting startup with explicit error diagnostics if required keys are missing.
 - **Git Hygiene**: The `.env` file is strictly listed in `.gitignore` and never committed. Only `.env.example` with non-functional placeholder values is tracked in the repository.

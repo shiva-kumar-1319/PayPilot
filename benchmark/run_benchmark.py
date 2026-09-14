@@ -13,7 +13,7 @@ from benchmark.baselines import (
     BaseRecoveryStrategy,
     BlindImmediateRetry,
     NoActionBaseline,
-    RecoverXAgent,
+    PayPilotAgent,
     RuleHeuristicBaseline,
 )
 from benchmark.metrics import BenchmarkEvaluationReport, compute_benchmark_metrics
@@ -29,7 +29,7 @@ def run_benchmark(
     strategies: list[BaseRecoveryStrategy] | None = None,
     explain: bool = False,
 ) -> BenchmarkEvaluationReport:
-    """Run full reproducible benchmark comparing No Action, Blind Retry, Heuristics, and RecoverX."""
+    """Run full reproducible benchmark comparing No Action, Blind Retry, Heuristics, and PayPilot."""
     if verbose:
         print("=" * 80)
         print(" RECOVERX BENCHMARK EVALUATOR — 4-WAY COMPARATIVE RECOVERY AUDIT")
@@ -50,7 +50,7 @@ def run_benchmark(
             NoActionBaseline(),
             BlindImmediateRetry(),
             RuleHeuristicBaseline(),
-            RecoverXAgent(),
+            PayPilotAgent(),
         ]
 
     metrics_map = {}
@@ -75,7 +75,7 @@ def run_benchmark(
     no_act = metrics_map.get(NoActionBaseline.name)
     blind = metrics_map.get(BlindImmediateRetry.name)
     heur = metrics_map.get(RuleHeuristicBaseline.name)
-    rx = metrics_map.get(RecoverXAgent.name)
+    rx = metrics_map.get(PayPilotAgent.name)
 
     comparative: dict[str, Any] = {}
     if rx and blind:
@@ -114,25 +114,25 @@ def run_benchmark(
         print("-" * 88)
 
         print("\n[SUMMARY LIFT]")
-        print(f"* RecoverX Net Revenue vs Blind Retry:     +INR {rx_lift_vs_blind:,.2f}")
-        print(f"* RecoverX Net Revenue vs Rule Heuristic:  +INR {rx_lift_vs_heur:,.2f}")
-        print(f"* RecoverX Hard-Stop Violations:           {rx.hard_stop_violations} (Invariant: ZERO)")
+        print(f"* PayPilot Net Revenue vs Blind Retry:     +INR {rx_lift_vs_blind:,.2f}")
+        print(f"* PayPilot Net Revenue vs Rule Heuristic:  +INR {rx_lift_vs_heur:,.2f}")
+        print(f"* PayPilot Hard-Stop Violations:           {rx.hard_stop_violations} (Invariant: ZERO)")
         print(f"* Blind Retry Hard-Stop Violations:        {blind.hard_stop_violations} (Policy Failures)")
 
-        print("\n[COMPARATIVE STRATEGY ANALYSIS (vs RecoverX)]")
+        print("\n[COMPARATIVE STRATEGY ANALYSIS (vs PayPilot)]")
         for name, m in metrics_map.items():
-            if name == RecoverXAgent.name:
+            if name == PayPilotAgent.name:
                 continue
             rate_diff = rx.recovery_rate_pct - m.recovery_rate_pct
             rev_diff = rx.net_revenue_recovered_inr - m.net_revenue_recovered_inr
             eff_pct = ((rx.cost_efficiency_ratio - m.cost_efficiency_ratio) / m.cost_efficiency_ratio * 100) if m.cost_efficiency_ratio > 0 else 0.0
-            print(f"* RecoverX vs {name}: {rate_diff:+.1f}pp recovery rate, {rev_diff:+,.0f} net revenue, {eff_pct:+.1f}% cost efficiency")
+            print(f"* PayPilot vs {name}: {rate_diff:+.1f}pp recovery rate, {rev_diff:+,.0f} net revenue, {eff_pct:+.1f}% cost efficiency")
 
         if explain:
             print("\n[RECOVERX STRATEGY TRADE-OFF RATIONALE]")
-            print("RecoverX intentionally trades a small amount of raw recovery volume for lower")
+            print("PayPilot intentionally trades a small amount of raw recovery volume for lower")
             print("execution cost and zero policy violations, netting more actual revenue.")
-            print("By maximizing Net Expected Value rather than raw volume, RecoverX optimizes capital efficiency.")
+            print("By maximizing Net Expected Value rather than raw volume, PayPilot optimizes capital efficiency.")
         print("=" * 88 + "\n")
 
     # 5. Persist JSON artifact if requested
@@ -149,7 +149,7 @@ def run_benchmark(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run RecoverX 4-Way Benchmark Evaluation.")
+    parser = argparse.ArgumentParser(description="Run PayPilot 4-Way Benchmark Evaluation.")
     parser.add_argument("--seed", type=int, default=42, help="Deterministic random seed (default: 42)")
     parser.add_argument("--transactions", type=int, default=1000, help="Number of failure transactions (default: 1000)")
     parser.add_argument("--output", type=str, default="benchmark/results/latest.json", help="Output JSON path")

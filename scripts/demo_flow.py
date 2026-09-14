@@ -1,13 +1,13 @@
-"""RecoverX — End-to-End Interactive Live Demo Flow (Day 14 Final Submission).
+"""PayPilot — End-to-End Interactive Live Demo Flow (Day 14 Final Submission).
 
 This script provides an automated, visual, and interactive demonstration of the
-complete RecoverX platform for hackathon judges and technical interviewers:
+complete PayPilot platform for hackathon judges and technical interviewers:
 1. Temporary Network Timeout -> Immediate Retry Recovery
 2. Card Decline -> Bounded AI Agent Investigation & UPI Method Switch
 3. 3DS OTP Drop -> Tokenized WhatsApp Recovery Link Generation & Payment
 4. Bank Server Outage -> Exponential Backoff Delay Scheduler
 5. Fraud / Stolen Card -> 100% Terminal Stop Block (Zero Leakage)
-6. 4-Way Comparative Benchmark Simulation (No-Action vs Blind vs Heuristic vs RecoverX)
+6. 4-Way Comparative Benchmark Simulation (No-Action vs Blind vs Heuristic vs PayPilot)
 7. Cryptographic SHA-256 Immutable Audit Trail Verification
 """
 
@@ -409,7 +409,7 @@ def run_demo() -> None:
         print(f"    [{ev.step_number}] {ev.stage:<22} | {ev.actor:<20} | {ev.action:<24} | Hash: {Colors.CYAN}{ev.checksum_hash}{Colors.RESET}")
 
     print_header("DEMO COMPLETE — ALL 7 SCENARIOS VERIFIED SUCCESSFULLY")
-    print(f"{Colors.GREEN}RecoverX is production-ready for final hackathon evaluation.{Colors.RESET}\n")
+    print(f"{Colors.GREEN}PayPilot is production-ready for final hackathon evaluation.{Colors.RESET}\n")
 
 
 if __name__ == "__main__":

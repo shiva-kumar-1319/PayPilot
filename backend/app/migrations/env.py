@@ -1,4 +1,4 @@
-"""Alembic migration environment for RecoverX."""
+"""Alembic migration environment for PayPilot."""
 
 from logging.config import fileConfig
 

@@ -1,4 +1,4 @@
-"""Recovery Execution Engine and Workflows for RecoverX.
+"""Recovery Execution Engine and Workflows for PayPilot.
 
 Day 11 deliverable: Implements automated, bounded execution across 4 recovery strategies:
 1. Immediate Retry (RETRY_SAME_METHOD)
@@ -1035,7 +1035,7 @@ class RecoveryExecutionEngine:
             customer_name=txn.customer.name if (txn.customer and txn.customer.name) else "Valued Customer",
             customer_email=txn.customer.email if txn.customer else None,
             customer_phone=txn.customer.phone if txn.customer else None,
-            description=f"RecoverX Payment Link for order {txn.external_transaction_id}",
+            description=f"PayPilot Payment Link for order {txn.external_transaction_id}",
             reference_id=token,
         )
         checkout_url = link_gw.short_url

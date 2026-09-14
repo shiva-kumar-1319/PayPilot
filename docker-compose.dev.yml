@@ -1,4 +1,4 @@
-# RecoverX Local Development Compose Override
+# PayPilot Local Development Compose Override
 # Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
 services:
   postgres:

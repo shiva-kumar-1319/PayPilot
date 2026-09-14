@@ -22,7 +22,7 @@ from backend.app.services.evaluation_service import evaluation_service
 
 
 def test_benchmark_simulation_all_strategies(db_session: Session):
-    """Verify comparative benchmark evaluates No Action, Blind Retry, Heuristics, and RecoverX AI."""
+    """Verify comparative benchmark evaluates No Action, Blind Retry, Heuristics, and PayPilot AI."""
     res = evaluation_service.run_benchmark(
         session=db_session,
         merchant_id="merch_101",
@@ -62,7 +62,7 @@ def test_benchmark_simulation_all_strategies(db_session: Session):
     assert heur.hard_failures_blocked > 0
     assert heur.unnecessary_retries == 0
 
-    # 4. RecoverX AI
+    # 4. PayPilot AI
     ai = res.strategies["RECOVERX_AI"]
     assert ai.strategy == BenchmarkStrategy.RECOVERX_AI
     assert ai.recovered_txns >= 30

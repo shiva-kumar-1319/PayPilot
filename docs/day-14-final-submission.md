@@ -1,4 +1,4 @@
-# 🏆 RecoverX — Day 14 Final Hackathon Submission Whitepaper
+# 🏆 PayPilot — Day 14 Final Hackathon Submission Whitepaper
 
 **Track / Category**: AI in FinTech / Intelligent Payment Infrastructure & Autonomous Agents  
 **Repository**: [https://github.com/shiva-kumar-1319/RazorPay-Hackathon](https://github.com/shiva-kumar-1319/RazorPay-Hackathon)  
@@ -9,11 +9,11 @@
 
 ## Executive Summary
 
-**RecoverX** is an autonomous, AI-orchestrated revenue recovery platform designed to solve the **$118 Billion annual payment failure crisis** in global e-commerce and SaaS subscriptions.
+**PayPilot** is an autonomous, AI-orchestrated revenue recovery platform designed to solve the **$118 Billion annual payment failure crisis** in global e-commerce and SaaS subscriptions.
 
-Unlike legacy recovery tools that rely on naive blind retries (hammering banks with repeat requests and causing account lockouts, rate limits, and double debits) or brittle static heuristics, RecoverX introduces a **Bounded ReAct Tool-Calling Agent**, **Calibrated Gradient-Boosted ML**, **Net Expected Value ($EV$) Optimization**, **Distributed Idempotent Execution**, and **Cryptographic SHA-256 Audit Trails**.
+Unlike legacy recovery tools that rely on naive blind retries (hammering banks with repeat requests and causing account lockouts, rate limits, and double debits) or brittle static heuristics, PayPilot introduces a **Bounded ReAct Tool-Calling Agent**, **Calibrated Gradient-Boosted ML**, **Net Expected Value ($EV$) Optimization**, **Distributed Idempotent Execution**, and **Cryptographic SHA-256 Audit Trails**.
 
-Across empirical 100-transaction simulation batches, RecoverX achieves:
+Across empirical 100-transaction simulation batches, PayPilot achieves:
 * **84.5% Net Recovery Rate** (vs. 21.1% for blind retries and 50.7% for static heuristics).
 * **$1,513.2\times$ Net ROI Multiplier** on execution costs (₹451,841.86 recovered on ₹298.20 in fees).
 * **64.8% Reduction in Customer Friction** by proactively switching failed card debits to 1-click UPI intents.
@@ -47,14 +47,14 @@ Payment processing is non-deterministic:
 
 ---
 
-## The RecoverX Architectural Moat (Why RecoverX Stands in the Top 1%)
+## The PayPilot Architectural Moat (Why PayPilot Stands in the Top 1%)
 
 Most hackathon projects wrap OpenAI prompt calls in basic scripts. In mission-critical payment infrastructure, raw LLMs fail because:
 * **Hallucination Risk**: An unconstrained LLM can invent fake payment methods, route to unsupported gateways, or generate contradictory explanations.
 * **Double-Billing Disasters**: Without distributed locks and transactional outboxes, concurrent retry webhooks can debit a customer multiple times.
 * **Compliance Violations**: Attempting to retry a stolen or hotlisted card violates card network rules (Visa/Mastercard) and results in hefty aggregator penalties.
 
-### How RecoverX Solves This:
+### How PayPilot Solves This:
 1. **Bounded ReAct Agent**: The agent interacts exclusively through 6 strongly typed Pydantic tools. It has zero ability to execute arbitrary actions.
 2. **Deterministic Pre-Guards**: Hard stop rules are evaluated **before** agent tool invocation. Stolen cards are blocked deterministically in 0.1ms.
 3. **Net Expected Value ($EV$) Optimization**: Weighs gross recovery amount against exponential time decay, direct SMS/gateway fees, and user friction penalties.
@@ -96,7 +96,7 @@ RECOVERX_AI 🏆           | ₹451,841.86 |         84.5% | ₹        298.20 |
 
 ## Team & Project Information
 
-* **Project Name**: RecoverX
+* **Project Name**: PayPilot
 * **Repository**: `https://github.com/shiva-kumar-1319/RazorPay-Hackathon`
 * **Lead Developer / Author**: Shiva Kumar / Prashanth
 * **License**: MIT

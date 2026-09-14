@@ -11,7 +11,7 @@ from backend.app.simulator.engine import PaymentSimulator
 
 
 def main():
-    parser = argparse.ArgumentParser(description="RecoverX Payment Simulator CLI")
+    parser = argparse.ArgumentParser(description="PayPilot Payment Simulator CLI")
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
 
     # Single payment simulation

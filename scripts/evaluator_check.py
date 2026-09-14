@@ -1,4 +1,4 @@
-"""RecoverX — Automated Red-Flag Elimination & Evaluator-Proof Audit Script.
+"""PayPilot — Automated Red-Flag Elimination & Evaluator-Proof Audit Script.
 
 Audits the entire codebase against the 28 rigorous fintech, security, and AI evaluation criteria.
 Exits with 0 only if CRITICAL == 0 and HIGH == 0.
@@ -147,7 +147,7 @@ def check_red_flags(audit: AuditResult) -> None:
     baselines_path = repo_root / "benchmark" / "baselines.py"
     if baselines_path.exists():
         content = baselines_path.read_text(encoding="utf-8")
-        if "NoActionBaseline" in content and "BlindImmediateRetry" in content and "RuleHeuristicBaseline" in content and "RecoverXAgent" in content:
+        if "NoActionBaseline" in content and "BlindImmediateRetry" in content and "RuleHeuristicBaseline" in content and "PayPilotAgent" in content:
             audit.pass_item("RF-09", "4-Way realistic benchmark baseline implementations")
         else:
             audit.fail_item("RF-09", "Benchmark baselines", "HIGH", "Missing one or more required baselines")

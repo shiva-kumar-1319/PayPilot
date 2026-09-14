@@ -2,9 +2,9 @@
 
 ## Overview
 
-Day 7 delivers the **Failure Intelligence Engine** for RecoverX, equipping the AI revenue recovery system with fine-grained error taxonomy, multi-gateway code normalization, semantic natural language failure parsing, explainable customer/merchant diagnostics, retry safety limits, and real-time failure anomaly telemetry.
+Day 7 delivers the **Failure Intelligence Engine** for PayPilot, equipping the AI revenue recovery system with fine-grained error taxonomy, multi-gateway code normalization, semantic natural language failure parsing, explainable customer/merchant diagnostics, retry safety limits, and real-time failure anomaly telemetry.
 
-Rather than treating payment declines as opaque strings or applying crude blind retries, RecoverX classifies every failure into four canonical behavioral categories:
+Rather than treating payment declines as opaque strings or applying crude blind retries, PayPilot classifies every failure into four canonical behavioral categories:
 1. **`TEMPORARY`** (Transient infrastructure & network blips)
 2. **`PAYMENT_METHOD`** (Instrument-specific limits, declines & configurations)
 3. **`CUSTOMER_ACTION`** (User authentication, balance, or authorization requirements)

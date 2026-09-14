@@ -2,9 +2,9 @@
 
 ## Overview
 
-Day 4 delivers the **RecoverX Payment Simulator Engine**, establishing realistic synthetic payment traffic, complete attempt lifecycles, rich failure code taxonomies, deterministic test fixtures, and scenario-based probabilistic generation.
+Day 4 delivers the **PayPilot Payment Simulator Engine**, establishing realistic synthetic payment traffic, complete attempt lifecycles, rich failure code taxonomies, deterministic test fixtures, and scenario-based probabilistic generation.
 
-This simulator acts as the upstream payment provider interface, generating transactional entities (`transactions`, `payment_attempts`, `failure_events`, `audit_logs`, `outbox_events`) that feed the RecoverX recovery pipeline while maintaining strict transactional atomicity and the outbox publishing pattern.
+This simulator acts as the upstream payment provider interface, generating transactional entities (`transactions`, `payment_attempts`, `failure_events`, `audit_logs`, `outbox_events`) that feed the PayPilot recovery pipeline while maintaining strict transactional atomicity and the outbox publishing pattern.
 
 ---
 

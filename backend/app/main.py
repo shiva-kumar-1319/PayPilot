@@ -1,4 +1,4 @@
-"""FastAPI application entry point for RecoverX."""
+"""FastAPI application entry point for PayPilot."""
 
 import logging
 import os
@@ -72,7 +72,7 @@ settings = get_settings()
 app = FastAPI(
     title=settings.app_name,
     version="1.0.0",
-    description="RecoverX — Autonomous AI Revenue Recovery Platform for Modern Payment Gateways. Featuring Bounded ReAct Tool-Calling Agents, Calibrated Gradient Boosted Recovery ML, Net Expected Value Optimization, Distributed Idempotent Execution, and Cryptographic SHA-256 Audit Ledgers.",
+    description="PayPilot — Autonomous AI Revenue Recovery Platform for Modern Payment Gateways. Featuring Bounded ReAct Tool-Calling Agents, Calibrated Gradient Boosted Recovery ML, Net Expected Value Optimization, Distributed Idempotent Execution, and Cryptographic SHA-256 Audit Ledgers.",
     lifespan=lifespan,
 )
 
@@ -116,7 +116,7 @@ async def get_dashboard_page() -> HTMLResponse:
     html_file = TEMPLATES_DIR / "dashboard.html"
     if html_file.exists():
         return HTMLResponse(content=html_file.read_text(encoding="utf-8"))
-    return HTMLResponse(content="<h1>RecoverX Dashboard</h1><p>Dashboard template not found.</p>")
+    return HTMLResponse(content="<h1>PayPilot Dashboard</h1><p>Dashboard template not found.</p>")
 
 
 @app.middleware("http")

@@ -45,7 +45,7 @@ def batch_classify_payment_failures(
 
 @router.get("/taxonomy", response_model=FailureTaxonomyResponse)
 def get_failure_taxonomy() -> FailureTaxonomyResponse:
-    """Retrieve the full standardized RecoverX failure taxonomy, category classifications, gateway mappings, and retry limits."""
+    """Retrieve the full standardized PayPilot failure taxonomy, category classifications, gateway mappings, and retry limits."""
     return failure_intelligence_service.get_taxonomy()
 
 

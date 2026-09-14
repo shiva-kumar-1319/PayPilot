@@ -1,4 +1,4 @@
-"""Dashboard Projection & Analytics Service for RecoverX.
+"""Dashboard Projection & Analytics Service for PayPilot.
 
 Provides optimized, tenant-isolated read projections for merchant overview,
 recovery funnel, live failed payments, agent decisions feed, workflow attempts,

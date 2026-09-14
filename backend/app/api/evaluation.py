@@ -1,6 +1,6 @@
-"""Evaluation & Business Proof REST API endpoints for RecoverX.
+"""Evaluation & Business Proof REST API endpoints for PayPilot.
 
-Day 13 deliverable: provides endpoints for baseline vs RecoverX benchmarks,
+Day 13 deliverable: provides endpoints for baseline vs PayPilot benchmarks,
 business proof ROI calculations, stopping rules compliance verification,
 and tamper-evident audit trail reconstruction.
 """
@@ -33,7 +33,7 @@ def run_benchmark_evaluation(
     1. No Action (Baseline 0)
     2. Blind Retry (Naive same-method retry)
     3. Rule-Based Heuristic (Deterministic heuristics)
-    4. RecoverX AI (Failure intelligence + ML probability + Net EV + Smart routing + Stopping rules)
+    4. PayPilot AI (Failure intelligence + ML probability + Net EV + Smart routing + Stopping rules)
     """
     return evaluation_service.run_benchmark(
         session=db,

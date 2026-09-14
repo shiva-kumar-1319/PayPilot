@@ -2,7 +2,7 @@
 
 ## Overview
 
-Day 11 delivers the **Recovery Execution Engine & Workflows** for RecoverX. Building directly upon the Day 10 Bounded Tool-Calling Agent and Day 9 Decision Engine, Day 11 implements automated, safety-bounded execution across four core payment recovery workflows:
+Day 11 delivers the **Recovery Execution Engine & Workflows** for PayPilot. Building directly upon the Day 10 Bounded Tool-Calling Agent and Day 9 Decision Engine, Day 11 implements automated, safety-bounded execution across four core payment recovery workflows:
 
 1. **Immediate Retry (`RETRY_SAME_METHOD`):** Safe retry attempts for transient gateway glitches and network timeouts, enforcing attempt limits and double-billing guards.
 2. **Payment-Method Switch (`SWITCH_TO_UPI`, `SWITCH_TO_CARD`, `SWITCH_TO_NETBANKING`):** Bypasses issuer card declines and mandate failures by seamlessly shifting to alternate instruments (UPI FastPay, NetBanking, or alternate card).

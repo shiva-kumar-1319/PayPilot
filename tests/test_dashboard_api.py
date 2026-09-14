@@ -24,12 +24,12 @@ def test_dashboard_html_page_routes(client: TestClient):
     """Verify GET / and GET /dashboard render the HTML dashboard application."""
     res_root = client.get("/")
     assert res_root.status_code == 200
-    assert "RecoverX" in res_root.text
+    assert "PayPilot" in res_root.text
     assert "Live Failed Payments" in res_root.text
 
     res_dash = client.get("/dashboard")
     assert res_dash.status_code == 200
-    assert "RecoverX" in res_dash.text
+    assert "PayPilot" in res_dash.text
 
 
 def test_dashboard_overview_api(client: TestClient, db_session: Session):

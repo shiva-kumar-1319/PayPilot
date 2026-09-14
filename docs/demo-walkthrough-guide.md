@@ -1,6 +1,6 @@
-# 🚀 RecoverX — Hackathon Judge Demo & Walkthrough Guide
+# 🚀 PayPilot — Hackathon Judge Demo & Walkthrough Guide
 
-This guide provides a comprehensive, step-by-step walkthrough for hackathon judges and evaluators to test and experience every capability of the **RecoverX AI Revenue Recovery Platform**.
+This guide provides a comprehensive, step-by-step walkthrough for hackathon judges and evaluators to test and experience every capability of the **PayPilot AI Revenue Recovery Platform**.
 
 ---
 

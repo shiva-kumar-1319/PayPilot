@@ -2,7 +2,7 @@
 
 ## Overview
 
-Day 3 transitions RecoverX from an early prototype slice into a production-hardened foundation. This milestone establishes database versioning via Alembic migrations, container security and health checks, centralized project configuration, shared test fixture patterns, and enhanced operational endpoints.
+Day 3 transitions PayPilot from an early prototype slice into a production-hardened foundation. This milestone establishes database versioning via Alembic migrations, container security and health checks, centralized project configuration, shared test fixture patterns, and enhanced operational endpoints.
 
 ---
 

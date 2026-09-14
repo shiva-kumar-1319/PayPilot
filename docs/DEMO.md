@@ -1,4 +1,4 @@
-# RecoverX Interactive Demo Guide (`DEMO.md`)
+# PayPilot Interactive Demo Guide (`DEMO.md`)
 
 This guide walks evaluators through running the live end-to-end interactive demo script.
 

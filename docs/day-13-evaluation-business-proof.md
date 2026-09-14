@@ -2,7 +2,7 @@
 
 ## Overview
 
-Day 13 delivers the comprehensive **Evaluation & Business Proof Engine** for RecoverX. Built upon the end-to-end recovery intelligence platform, Day 13 establishes the empirical financial and operational validation that proves RecoverX's superiority over traditional recovery approaches:
+Day 13 delivers the comprehensive **Evaluation & Business Proof Engine** for PayPilot. Built upon the end-to-end recovery intelligence platform, Day 13 establishes the empirical financial and operational validation that proves PayPilot's superiority over traditional recovery approaches:
 
 1. **4-Way Comparative Benchmarking:** Rigorous empirical evaluation across four recovery strategies:
    - **`NO_ACTION` (0-Retries Baseline):** Zero intervention baseline simulating standard checkout drops without recovery.
@@ -55,7 +55,7 @@ flowchart TD
 
 ---
 
-## 1. Comparative Benchmark: Baseline vs. RecoverX
+## 1. Comparative Benchmark: Baseline vs. PayPilot
 
 ### 1.1 Strategy Definitions & Recovery Mechanics
 
@@ -68,7 +68,7 @@ flowchart TD
 
 ### 1.2 Mathematical Business Proof Formulation
 
-The RecoverX financial model proves that recovering revenue must not come at the expense of high gateway fees or user friction:
+The PayPilot financial model proves that recovering revenue must not come at the expense of high gateway fees or user friction:
 
 $$\text{Net Financial Gain} (\mathcal{S}) = \sum_{t \in \mathcal{T}_{\text{rec}}} \text{GMV}_t - \sum_{a \in \mathcal{A}} \text{Fee}(a) - \sum_{a \in \mathcal{A}_{\text{fric}}} \text{Penalty}(a)$$
 
@@ -104,7 +104,7 @@ Cost-to-Recover Ratio            : 0.45% of recovered GMV
 
 ## 2. Safety Stopping Rules & Concurrency Guards
 
-RecoverX enforces **6 Non-Negotiable Safety Stopping Rules** across all recovery workflows to guarantee zero financial or reputational leakage:
+PayPilot enforces **6 Non-Negotiable Safety Stopping Rules** across all recovery workflows to guarantee zero financial or reputational leakage:
 
 ```mermaid
 classDiagram
@@ -189,7 +189,7 @@ classDiagram
 
 ## 3. Cryptographic Audit Trail & Integrity Ledger
 
-Every event in the RecoverX lifecycle generates an immutable, tamper-evident audit record with SHA-256 checksums:
+Every event in the PayPilot lifecycle generates an immutable, tamper-evident audit record with SHA-256 checksums:
 
 ### 3.1 Event Hash Computation
 $$\text{Checksum} = \text{SHA256}(\text{step} \parallel \text{timestamp} \parallel \text{stage} \parallel \text{actor} \parallel \text{action} \parallel \text{JSON}(\text{details}))[0:16]$$
@@ -326,7 +326,7 @@ sequenceDiagram
 Day 13 test suite validates all evaluation math, benchmark comparisons, stopping rules enforcement, and audit trail serialization:
 
 ```bash
-# Run the entire RecoverX test suite (169 Tests passing)
+# Run the entire PayPilot test suite (169 Tests passing)
 .venv\Scripts\python.exe run_tests.py
 ```
 

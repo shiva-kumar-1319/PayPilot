@@ -1,4 +1,4 @@
-"""Payment simulator package for RecoverX."""
+"""Payment simulator package for PayPilot."""
 
 from backend.app.simulator.constants import (
     FAILURE_CATALOG,

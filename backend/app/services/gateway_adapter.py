@@ -1,4 +1,4 @@
-"""Payment Gateway Adapter Layer for RecoverX.
+"""Payment Gateway Adapter Layer for PayPilot.
 
 Provides an abstraction over real payment gateways and the payment environment simulator:
 - SimulatedGatewayAdapter: In-memory stochastic simulation (default, active for offline testing and benchmarks).
@@ -86,7 +86,7 @@ class PaymentGatewayAdapter(ABC):
         customer_name: str,
         customer_email: str | None = None,
         customer_phone: str | None = None,
-        description: str = "RecoverX Payment Link",
+        description: str = "PayPilot Payment Link",
         reference_id: str | None = None,
     ) -> GatewayPaymentLinkResult:
         """Create a tokenized payment link on the gateway."""
@@ -147,7 +147,7 @@ class SimulatedGatewayAdapter(PaymentGatewayAdapter):
         customer_name: str,
         customer_email: str | None = None,
         customer_phone: str | None = None,
-        description: str = "RecoverX Payment Link",
+        description: str = "PayPilot Payment Link",
         reference_id: str | None = None,
     ) -> GatewayPaymentLinkResult:
         link_id = f"plink_sim_{uuid4().hex[:10]}"
@@ -177,7 +177,7 @@ class RazorpayTestModeAdapter(PaymentGatewayAdapter):
             base_url=self.BASE_URL,
             auth=(self.key_id, self.key_secret),
             timeout=self.timeout,
-            headers={"User-Agent": "RecoverX-TestModeAdapter/1.0"},
+            headers={"User-Agent": "PayPilot-TestModeAdapter/1.0"},
         )
 
     def create_order(
@@ -193,7 +193,7 @@ class RazorpayTestModeAdapter(PaymentGatewayAdapter):
             "amount": amount_paise,
             "currency": currency,
             "receipt": receipt or f"rcpt_{uuid4().hex[:8]}",
-            "notes": notes or {"system": "RecoverX"},
+            "notes": notes or {"system": "PayPilot"},
         }
         with self._get_client() as client:
             resp = client.post("/orders", json=payload)
@@ -258,7 +258,7 @@ class RazorpayTestModeAdapter(PaymentGatewayAdapter):
         customer_name: str,
         customer_email: str | None = None,
         customer_phone: str | None = None,
-        description: str = "RecoverX Payment Link",
+        description: str = "PayPilot Payment Link",
         reference_id: str | None = None,
     ) -> GatewayPaymentLinkResult:
         """Create a real test-mode payment link via Razorpay API."""
@@ -276,7 +276,7 @@ class RazorpayTestModeAdapter(PaymentGatewayAdapter):
                 "contact": customer_phone or "+919876543210",
             },
             "notify": {"sms": False, "email": False},
-            "notes": {"created_by": "RecoverX"},
+            "notes": {"created_by": "PayPilot"},
         }
         with self._get_client() as client:
             resp = client.post("/payment_links", json=payload)

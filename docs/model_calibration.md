@@ -1,6 +1,6 @@
 # Model Calibration & Cross-Validation Audit (`docs/model_calibration.md`)
 
-> **Methodological Disclosure**: RecoverX models are trained on domain-knowledge-derived synthetic labels and internally calibrated using isotonic regression (`CalibratedClassifierCV`). They have not yet been evaluated against live financial recovery outcomes in production.
+> **Methodological Disclosure**: PayPilot models are trained on domain-knowledge-derived synthetic labels and internally calibrated using isotonic regression (`CalibratedClassifierCV`). They have not yet been evaluated against live financial recovery outcomes in production.
 
 ---
 
@@ -44,7 +44,7 @@ The table below compares mean predicted probability against observed empirical r
 
 ## 4. Why Calibration Matters for Net Expected Value ($EV$)
 
-In RecoverX, $P(\text{success})$ directly scales the monetary transaction volume:
+In PayPilot, $P(\text{success})$ directly scales the monetary transaction volume:
 
 $$\text{Net } EV(a) = P(\text{success} \mid \mathbf{x}, a) \cdot \text{Amount} - C_{\text{rail}}(a) - F_{\text{customer}}(a)$$
 

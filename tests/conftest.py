@@ -1,4 +1,4 @@
-"""Shared pytest fixtures for the RecoverX test suite."""
+"""Shared pytest fixtures for the PayPilot test suite."""
 
 import os
 from collections.abc import Generator

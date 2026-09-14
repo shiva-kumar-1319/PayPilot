@@ -38,7 +38,7 @@ def print_status() -> None:
     with session_factory() as session:
         metrics = get_pipeline_metrics(session)
         exec_metrics = recovery_execution_engine.get_execution_metrics(session)
-    print("\n--- RecoverX Real-Time Event Pipeline & Execution Status ---")
+    print("\n--- PayPilot Real-Time Event Pipeline & Execution Status ---")
     print(f"Pending Outbox Backlog : {metrics['outbox_pending_count']}")
     print(f"Published Outbox Total : {metrics['outbox_published_count']}")
     print(f"Processed Events Total : {metrics['processed_events_count']}")
@@ -56,7 +56,7 @@ def print_status() -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="RecoverX Outbox Publisher & Event Pipeline Worker")
+    parser = argparse.ArgumentParser(description="PayPilot Outbox Publisher & Event Pipeline Worker")
     parser.add_argument("--once", action="store_true", help="Run a single outbox publication pass and exit")
     parser.add_argument("--run-scheduler", action="store_true", help="Run a single scheduled delayed retry pass and exit")
     parser.add_argument("--interval", type=float, default=2.0, help="Polling interval in seconds (default: 2.0s)")
@@ -87,7 +87,7 @@ def main() -> None:
         print_status()
         sys.exit(0)
 
-    logger.info("Starting RecoverX Outbox & Execution Worker daemon (interval=%.1fs, batch_size=%d)...", args.interval, args.batch_size)
+    logger.info("Starting PayPilot Outbox & Execution Worker daemon (interval=%.1fs, batch_size=%d)...", args.interval, args.batch_size)
     try:
         while True:
             published, failed = run_worker_pass(limit=args.batch_size)

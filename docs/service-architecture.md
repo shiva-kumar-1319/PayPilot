@@ -1,6 +1,6 @@
 # Service Architecture
 
-RecoverX begins as a modular monolith with independently deployable worker processes. Modules communicate through contracts and events, so high-volume paths can later be extracted without changing the product model.
+PayPilot begins as a modular monolith with independently deployable worker processes. Modules communicate through contracts and events, so high-volume paths can later be extracted without changing the product model.
 
 | Module | Owns | Sync interface | Async interface |
 | --- | --- | --- | --- |

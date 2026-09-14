@@ -1,4 +1,4 @@
-"""Unit tests for the RecoverX In-Memory EventBus service."""
+"""Unit tests for the PayPilot In-Memory EventBus service."""
 
 from uuid import uuid4
 

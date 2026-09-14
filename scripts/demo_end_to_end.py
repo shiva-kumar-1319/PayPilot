@@ -1,4 +1,4 @@
-"""RecoverX — End-to-End Autonomous AI Revenue Recovery Interactive Demo.
+"""PayPilot — End-to-End Autonomous AI Revenue Recovery Interactive Demo.
 
 Executes 5 canonical production recovery scenarios from failure ingestion to final settlement:
 1. Card OTP Drop-off -> Customer WhatsApp Recovery Link -> Customer Pays via UPI -> Succeeded & Audit Chain verified.

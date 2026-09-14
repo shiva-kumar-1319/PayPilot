@@ -2,7 +2,7 @@
 
 ## Overview
 
-Day 10 delivers the **Payment Recovery Agent** for RecoverX — a strictly bounded, tool-calling AI agent that investigates payment failure transactions, retrieves deterministic policy rules, scores candidate recovery actions using the Day 8 ML prediction model and Day 9 Expected Value decision engine, enforces pre-execution safety guards, and records explainable audit trails with tailored customer and merchant narratives.
+Day 10 delivers the **Payment Recovery Agent** for PayPilot — a strictly bounded, tool-calling AI agent that investigates payment failure transactions, retrieves deterministic policy rules, scores candidate recovery actions using the Day 8 ML prediction model and Day 9 Expected Value decision engine, enforces pre-execution safety guards, and records explainable audit trails with tailored customer and merchant narratives.
 
 ```mermaid
 flowchart TD

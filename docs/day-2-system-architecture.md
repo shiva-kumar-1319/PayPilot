@@ -1,6 +1,6 @@
 # Day 2 — System Architecture
 
-This document is the implementation blueprint for RecoverX. It turns a failed-payment signal into a safe, measurable recovery workflow without letting an AI model directly trigger a payment action.
+This document is the implementation blueprint for PayPilot. It turns a failed-payment signal into a safe, measurable recovery workflow without letting an AI model directly trigger a payment action.
 
 ## Goals
 

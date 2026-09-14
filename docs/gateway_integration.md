@@ -1,12 +1,12 @@
 # Payment Gateway Integration Architecture (`docs/gateway_integration.md`)
 
-> **Disclosure**: RecoverX supports sandboxed test-mode gateway integration. This document delineates what is real (live API calls against sandbox endpoints) versus what is simulated (stochastic outcome generation).
+> **Disclosure**: PayPilot supports sandboxed test-mode gateway integration. This document delineates what is real (live API calls against sandbox endpoints) versus what is simulated (stochastic outcome generation).
 
 ---
 
 ## 1. Overview & Architecture
 
-RecoverX decouples the recovery workflow engine from specific payment rails via the `PaymentGatewayAdapter` interface (`backend/app/services/gateway_adapter.py`). This design allows instant switching between offline simulation and real sandbox payment gateways without altering decision or recovery logic.
+PayPilot decouples the recovery workflow engine from specific payment rails via the `PaymentGatewayAdapter` interface (`backend/app/services/gateway_adapter.py`). This design allows instant switching between offline simulation and real sandbox payment gateways without altering decision or recovery logic.
 
 ```
                   ┌───────────────────────────────┐

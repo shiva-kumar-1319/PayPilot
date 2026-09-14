@@ -1,4 +1,4 @@
-"""RecoverX Realistic & Reproducible Benchmark Framework."""
+"""PayPilot Realistic & Reproducible Benchmark Framework."""
 
 from benchmark.scenarios import BenchmarkScenarioItem, generate_scenarios
 from benchmark.simulator import PaymentEnvironmentSimulator
@@ -6,7 +6,7 @@ from benchmark.baselines import (
     BaseRecoveryStrategy,
     BlindImmediateRetry,
     NoActionBaseline,
-    RecoverXAgent,
+    PayPilotAgent,
     RuleHeuristicBaseline,
 )
 from benchmark.metrics import BenchmarkEvaluationReport, compute_benchmark_metrics
@@ -18,7 +18,7 @@ __all__ = [
     "BlindImmediateRetry",
     "NoActionBaseline",
     "PaymentEnvironmentSimulator",
-    "RecoverXAgent",
+    "PayPilotAgent",
     "RuleHeuristicBaseline",
     "compute_benchmark_metrics",
     "generate_scenarios",

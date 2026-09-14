@@ -1,4 +1,4 @@
-# RecoverX Performance, Latency & Scale Report (`docs/performance.md`)
+# PayPilot Performance, Latency & Scale Report (`docs/performance.md`)
 
 > **Measurement Disclosure**: All metrics below were empirically measured on a local development machine using the reproducible benchmark runner (`benchmark/perf_benchmark.py`). No simulated or fabricated performance numbers are reported.
 
@@ -38,7 +38,7 @@ Sustained decision throughput under concurrent synthetic failure bursts:
 
 ## 4. Key Architectural Enablers of High Throughput
 
-1. **Zero LLM in the Financial Path**: Traditional generative agent architectures introduce 800ms–2500ms network latency per decision. RecoverX enforces sub-millisecond ML inference with pre-compiled isotonic regressors.
+1. **Zero LLM in the Financial Path**: Traditional generative agent architectures introduce 800ms–2500ms network latency per decision. PayPilot enforces sub-millisecond ML inference with pre-compiled isotonic regressors.
 2. **Pre-Computed Action Indices**: Feature matrices use vectorized NumPy representations, extracting 26 features in microseconds.
 3. **Bounded ReAct Tool Loops**: Strict 6-step deterministic budget prevents infinite reflection loops or combinatorial exploration.
 

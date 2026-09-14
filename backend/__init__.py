@@ -1,1 +1,1 @@
-"""RecoverX backend package."""
+"""PayPilot backend package."""
